@@ -1,19 +1,34 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class JumpDiskScript : MonoBehaviour
 {
-    public bool playerEnter = false;
-    public int score;
+    private bool playerEnter = false;
+    private int index = 0;
+    private int _jumpHeight = 5;
+    public JumpData[] jump;
+    public bool PlayerEnter { get => playerEnter; set => playerEnter = value; }
+    public int _JumpHeight { get => _jumpHeight; set => _jumpHeight = value; }
+
     private void OnTriggerEnter(Collider other) 
     {
-        playerEnter = true;
-        score++;
+        PlayerEnter = true;
     }
 
     private void OnTriggerExit(Collider other) 
     {
-        playerEnter = false;    
+        PlayerEnter = false;    
+    }
+
+    public void JumpSettings()
+    {
+        if (index == jump.Length)
+        {
+            index = 0;
+        }
+
+        this.transform.localScale = jump[index].JumpDiskScale;
+        _JumpHeight = jump[index].JumpHeight;
+
+        index++;
     }
 }
