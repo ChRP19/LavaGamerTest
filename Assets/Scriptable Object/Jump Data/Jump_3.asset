@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01851784f32a05345b238f1ab2feb4bd, type: 3}
   m_Name: Jump_3
   m_EditorClassIdentifier: 
-  jumpHeight: 15
+  jumpHeight: 7
   jumpDiskScale: {x: 0.5, y: 0.01, z: 0.5}
